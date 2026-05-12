@@ -1,0 +1,314 @@
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+body {
+  background: linear-gradient(135deg, #0f172a 0%, #1e293b 100%);
+  color: white;
+  font-family: 'Poppins', sans-serif;
+  text-align: center;
+  min-height: 100vh;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  padding: 20px;
+}
+
+.container {
+  width: 100%;
+  max-width: 600px;
+}
+
+h1 {
+  font-size: 2.5rem;
+  margin-bottom: 40px;
+  background: linear-gradient(135deg, #2563eb 0%, #7c3aed 100%);
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+  background-clip: text;
+  font-weight: 700;
+  letter-spacing: 1px;
+}
+
+/* PLACAR */
+.scoreboard {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  gap: 30px;
+  margin-bottom: 40px;
+  padding: 30px;
+  background: linear-gradient(135deg, #1e293b 0%, #0f172a 100%);
+  border-radius: 20px;
+  border: 2px solid rgba(37, 99, 235, 0.3);
+  box-shadow: 0 20px 60px rgba(37, 99, 235, 0.2);
+}
+
+.player {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  min-width: 120px;
+}
+
+.player-name {
+  font-size: 0.9rem;
+  color: #cbd5e1;
+  margin-bottom: 10px;
+  font-weight: 600;
+}
+
+.player-symbol {
+  font-size: 2.5rem;
+  font-weight: 700;
+  color: #2563eb;
+  margin-bottom: 10px;
+}
+
+.player-score {
+  font-size: 3rem;
+  font-weight: 800;
+  color: #2563eb;
+  background: linear-gradient(135deg, #2563eb 0%, #7c3aed 100%);
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+  background-clip: text;
+}
+
+.vs {
+  font-size: 1.5rem;
+  font-weight: 700;
+  color: #cbd5e1;
+  padding: 0 20px;
+}
+
+/* OPÇÕES DO JOGO */
+.game-options {
+  margin-bottom: 30px;
+  padding: 25px;
+  background: linear-gradient(135deg, #1e293b 0%, #0f172a 100%);
+  border-radius: 15px;
+  border: 2px solid rgba(37, 99, 235, 0.2);
+}
+
+.option-group {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 15px;
+}
+
+.option-group label {
+  font-size: 1.1rem;
+  font-weight: 600;
+  color: #cbd5e1;
+}
+
+.radio-group {
+  display: flex;
+  gap: 20px;
+  flex-wrap: wrap;
+  justify-content: center;
+}
+
+.radio-label {
+  display: flex;
+  align-items: center;
+  gap: 8px;
+  cursor: pointer;
+  font-size: 0.95rem;
+  color: #cbd5e1;
+  transition: all 0.3s ease;
+}
+
+.radio-label:hover {
+  color: #2563eb;
+}
+
+.radio-label input[type="radio"] {
+  display: none;
+}
+
+.radio-custom {
+  width: 20px;
+  height: 20px;
+  border: 2px solid #2563eb;
+  border-radius: 50%;
+  position: relative;
+  transition: all 0.3s ease;
+}
+
+.radio-label input[type="radio"]:checked + .radio-custom {
+  background: linear-gradient(135deg, #2563eb 0%, #7c3aed 100%);
+  border-color: #7c3aed;
+}
+
+.radio-label input[type="radio"]:checked + .radio-custom::after {
+  content: '';
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  width: 8px;
+  height: 8px;
+  background: white;
+  border-radius: 50%;
+}
+
+h2 {
+  font-size: 1.5rem;
+  color: #2563eb;
+  margin: 30px 0 20px;
+  min-height: 50px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.board {
+  width: 360px;
+  margin: 0 auto 50px;
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  gap: 15px;
+  padding: 30px;
+  background: rgba(30, 41, 59, 0.5);
+  border-radius: 20px;
+  border: 2px solid rgba(37, 99, 235, 0.3);
+  backdrop-filter: blur(10px);
+  box-shadow: 0 20px 60px rgba(37, 99, 235, 0.2);
+}
+
+.cell {
+  width: 100px;
+  height: 100px;
+  background: linear-gradient(135deg, #1e293b 0%, #0f172a 100%);
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  font-size: 2.5rem;
+  cursor: pointer;
+  border-radius: 15px;
+  border: 2px solid #2d3e4f;
+  transition: all 0.3s ease;
+  font-weight: 700;
+  color: #2563eb;
+}
+
+.cell:hover {
+  transform: scale(1.05);
+  border-color: #2563eb;
+  box-shadow: 0 0 20px rgba(37, 99, 235, 0.4);
+}
+
+.cell:active {
+  transform: scale(0.95);
+}
+
+.button-group {
+  display: flex;
+  gap: 15px;
+  justify-content: center;
+  flex-wrap: wrap;
+}
+
+.btn-restart,
+.btn-reset-score,
+.btn-back {
+  padding: 14px 30px;
+  border-radius: 50px;
+  font-size: 0.95rem;
+  font-weight: 700;
+  cursor: pointer;
+  transition: all 0.3s ease;
+  text-transform: uppercase;
+  letter-spacing: 1px;
+  text-decoration: none;
+  display: inline-block;
+  font-family: 'Poppins', sans-serif;
+  border: 2px solid;
+}
+
+.btn-restart {
+  border-color: #2563eb;
+  background: linear-gradient(135deg, #2563eb 0%, #1d4ed8 100%);
+  color: white;
+}
+
+.btn-restart:hover {
+  transform: translateY(-3px);
+  box-shadow: 0 10px 25px rgba(37, 99, 235, 0.4);
+  border-color: #7c3aed;
+}
+
+.btn-reset-score {
+  border-color: #dc2626;
+  background: linear-gradient(135deg, #dc2626 0%, #b91c1c 100%);
+  color: white;
+}
+
+.btn-reset-score:hover {
+  transform: translateY(-3px);
+  box-shadow: 0 10px 25px rgba(220, 38, 38, 0.4);
+  border-color: #991b1b;
+}
+
+.btn-back {
+  border-color: #7c3aed;
+  background: rgba(124, 58, 237, 0.2);
+  color: #7c3aed;
+}
+
+.btn-back:hover {
+  transform: translateY(-3px);
+  background: linear-gradient(135deg, #7c3aed 0%, #6d28d9 100%);
+  color: white;
+  box-shadow: 0 10px 25px rgba(124, 58, 237, 0.4);
+}
+
+@media (max-width: 480px) {
+  h1 {
+    font-size: 1.8rem;
+    margin-bottom: 30px;
+  }
+
+  .scoreboard {
+    flex-direction: column;
+    gap: 20px;
+    padding: 20px;
+  }
+
+  .vs {
+    padding: 10px 0;
+  }
+
+  .board {
+    width: 100%;
+    max-width: 320px;
+    gap: 10px;
+  }
+
+  .cell {
+    width: 90px;
+    height: 90px;
+    font-size: 2rem;
+  }
+
+  .radio-group {
+    flex-direction: column;
+    gap: 10px;
+  }
+
+  .button-group {
+    gap: 10px;
+  }
+
+  .btn-restart,
+  .btn-reset-score,
+  .btn-back {
+    flex: 1;
+    min-width: 120px;
+  }
+}

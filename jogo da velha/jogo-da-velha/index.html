@@ -1,0 +1,74 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Jogo da Velha</title>
+  <link rel="stylesheet" href="style.css">
+  <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;600;700&display=swap" rel="stylesheet">
+</head>
+<body>
+
+<div class="container">
+  <h1>🎮 JOGO DA VELHA</h1>
+
+  <!-- PLACAR -->
+  <div class="scoreboard">
+    <div class="player player1">
+      <div class="player-name">JOGADOR 1</div>
+      <div class="player-symbol">X</div>
+      <div class="player-score" id="scoreX">0</div>
+    </div>
+
+    <div class="vs">VS</div>
+
+    <div class="player player2">
+      <div class="player-name">JOGADOR 2</div>
+      <div class="player-symbol">O</div>
+      <div class="player-score" id="scoreO">0</div>
+    </div>
+  </div>
+
+  <!-- OPÇÕES DO JOGO -->
+  <div class="game-options">
+    <div class="option-group">
+      <label>Quem começa:</label>
+      <div class="radio-group">
+        <label class="radio-label">
+          <input type="radio" name="startingPlayer" value="X" checked>
+          <span class="radio-custom"></span>
+          Jogador 1 (X)
+        </label>
+        <label class="radio-label">
+          <input type="radio" name="startingPlayer" value="O">
+          <span class="radio-custom"></span>
+          Jogador 2 (O)
+        </label>
+      </div>
+    </div>
+  </div>
+
+  <h2 id="status">Vez do X</h2>
+
+  <div class="board">
+    <div class="cell"></div>
+    <div class="cell"></div>
+    <div class="cell"></div>
+    <div class="cell"></div>
+    <div class="cell"></div>
+    <div class="cell"></div>
+    <div class="cell"></div>
+    <div class="cell"></div>
+    <div class="cell"></div>
+  </div>
+
+  <div class="button-group">
+    <button onclick="restartGame()" class="btn-restart">🔄 REINICIAR</button>
+    <button onclick="resetScoreboard()" class="btn-reset-score">📊 ZERAR PLACAR</button>
+    <a href="../../index.html" class="btn-back">← VOLTAR</a>
+  </div>
+</div>
+
+<script src="script.js"></script>
+</body>
+</html>

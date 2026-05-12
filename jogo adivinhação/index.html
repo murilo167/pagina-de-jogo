@@ -1,0 +1,35 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Jogo de Adivinhação</title>
+  <link rel="stylesheet" href="style.css">
+  <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;600;700&display=swap" rel="stylesheet">
+</head>
+<body>
+
+<div class="container">
+  <h1>🔢 ADIVINHE O NÚMERO</h1>
+  
+  <div class="game-box">
+    <p class="info">Adivinhe um número entre 1 e 100</p>
+    
+    <div class="input-group">
+      <input type="number" id="guess" placeholder="Digite um número..." min="1" max="100">
+      <button onclick="checkGuess()" class="btn-submit">ENVIAR</button>
+    </div>
+
+    <h2 id="message">Comece a adivinhar!</h2>
+    <p class="stats">📊 Tentativas: <span id="tries">0</span></p>
+  </div>
+
+  <div class="button-group">
+    <button onclick="restartGame()" class="btn-restart">🔄 REINICIAR</button>
+    <a href="../../index.html" class="btn-back">← VOLTAR</a>
+  </div>
+</div>
+
+<script src="script.js"></script>
+</body>
+</html>
